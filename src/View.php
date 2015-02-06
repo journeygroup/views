@@ -18,7 +18,7 @@ class View
      * @param   $template [description]
      * @return [type]           [description]
      */
-    public function __construct($template, $variables)
+    public function __construct($template, $variables = array())
     {
         $this->template = $template;
         $this->variables = $variables;

@@ -20,15 +20,15 @@ Creating and using views is easy-easy:
 
 ```php
 // Here's one way:
-$view = new Journey\Views('template-file', $variables);
+$view = new Journey\View('template-file', $variables);
 echo $view->render();
 
 // Here's another:
-$view = Journey\Views::make('template-file', $variables);
+$view = Journey\View::make('template-file', $variables);
 echo $view->render();
 
 // The quickest
-echo Journey\Views::make('template-file', $variables);
+echo Journey\View::make('template-file', $variables);
 ```
 
 Key value pairs in the $variables array will be extracted for use in the template file. You can also choose to prefix your variables with the `variable_prefix` option. Of course views can easily be nested as well.

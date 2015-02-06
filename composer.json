@@ -1,5 +1,5 @@
 {
-    "name": "journey/view",
+    "name": "journey/views",
     "type": "library",
     "description": "Lightweight view object for alacarte frameworks",
     "keywords": ["view", "template", "render"],

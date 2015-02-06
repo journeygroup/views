@@ -11,7 +11,7 @@ A simple PHP class for creating lightweight renderable views for alacarte PHP fr
 Composer is by far the easiest way to install Views.
 
 ```sh
-    composer require journey/view ~0.1
+composer require journey/view ~0.1
 ```
 
 ### Rendering Views

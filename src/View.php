@@ -109,6 +109,23 @@ class View
 
 
     /**
+     * Set a particular extractable variable
+     * @param String $variable name of the key to assign
+     * @param Mixed  $value    a value to assign
+     * @return self
+     */
+    public function __set($variable, $value)
+    {
+        if (!is_array($this->variables)) {
+            $this->variables = array();
+        }
+        $this->variables[$variable] = $value;
+        return $this;
+    }
+
+
+
+    /**
      * Allow direct echo of this object
      * @return string  should output the rendered view
      */

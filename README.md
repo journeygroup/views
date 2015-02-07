@@ -31,19 +31,49 @@ echo $view->render();
 echo Journey\View::make('template-file', $variables);
 ```
 
-Key value pairs in the $variables array will be extracted for use in the template file. You can also choose to prefix your variables with the `variable_prefix` option. Of course views can easily be nested as well.
+Key value pairs in the $variables array will be extracted for use in the template file. You can also choose to prefix your variables with the `variable_prefix` option. Of course views can easily be nested as well. Here's an example of typical usage:
+
+```php
+// file: app.php	
+$view = Journey\View('master');
+
+// ... some application logic
+$variables = array(
+	'title' => 'Hello World',
+	'paragraph' => 'Lorum ipsum...'
+);
+$view->content = Journey\View::make('page', $variables);
+```
+
+
+```php
+// file: templates/master.php
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example Website</title>
+	</head>
+	<body>
+		<?= $content ?>
+	</body>
+</html>
+
+// file: template/page.php
+<h1><?= $title ?></h1>
+<p><?= $paragraph ?></p>
+```
 
 ### Configuration
 
 Generally you'll want to configure the default values for your entire installation sometime around boot:
 
 ```php
-    Journey\View::defaults([
-        'templates' => getcwd() . "/templates",
-        'extension' => '.php',
-        'variable_prefix' => null,
-        'string_template' => false
-    ]);
+Journey\View::defaults([
+    'templates' => getcwd() . "/templates",
+    'extension' => '.php',
+    'variable_prefix' => null,
+    'string_template' => false
+]);
 ```
 
 However you can also set per-instance configuration values:

@@ -57,7 +57,9 @@ $view->content = Journey\View::make('page', $variables);
 		<?= $content ?>
 	</body>
 </html>
+```
 
+```php
 // file: template/page.php
 <h1><?= $title ?></h1>
 <p><?= $paragraph ?></p>
